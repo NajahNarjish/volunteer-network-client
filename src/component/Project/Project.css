@@ -1,0 +1,11 @@
+.projectDiv{
+    position: relative;
+}
+
+.projectDiv p{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    padding: 5px;
+    background-color: salmon;
+}
