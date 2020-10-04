@@ -1,5 +1,4 @@
-import React from 'react';
-import fakedata from '../../fakedata/fakedata.js';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import Grid from '@material-ui/core/Grid';
 // import DateFnsUtils from '@date-io/date-fns';
@@ -11,7 +10,12 @@ import { useParams } from 'react-router-dom';
 
 const Register = () => {
     const {eventKey} = useParams();
-    const project = fakedata.find(item => item.key === eventKey);
+    const [event, setEvent] = useState({});
+    useEffect(() =>{
+        fetch("http://localhost:5000/event/" + eventKey)
+        .then(res => res.json())
+        .then(data => setEvent(data))
+    }, [eventKey]);
 
     // const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
   
@@ -65,7 +69,7 @@ const Register = () => {
                                      <input type="text" class="form-control" id="eventName" placeholder="Event Name" style={{backgroundColor:"#F2F2F2"}} value = {project.title}/>
                                      }  */}
                                     
-                                     <input type="text" class="form-control" id="eventName" placeholder="Event Name" style={{backgroundColor:"#F2F2F2"}} value = {project.title}/>
+                                     <input type="text" class="form-control" id="eventName" placeholder="Event Name" style={{backgroundColor:"#F2F2F2"}} value = {event.title}/>
                                      
                                 </div>
                                 <button  class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "400px", margin:"10px"}}>Registration</button>     

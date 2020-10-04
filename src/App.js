@@ -1,7 +1,6 @@
 import React, { useState, createContext } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import fakedata from '../src/fakedata/fakedata.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,12 +16,9 @@ import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 export const VolunteerContext = createContext();
 
 function App() {
-  const fakeProjects = fakedata;
-  const [projects, setProjects] = useState(fakeProjects);
-
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <VolunteerContext.Provider value={[projects, setProjects, loggedInUser, setLoggedInUser]}>
+    <VolunteerContext.Provider value={[loggedInUser, setLoggedInUser]}>
       {/* <p>email: {loggedInUser.email}</p>  */}
       <Router>
         <Header></Header>

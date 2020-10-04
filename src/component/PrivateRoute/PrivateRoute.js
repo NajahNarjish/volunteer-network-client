@@ -3,8 +3,8 @@ import { Route, Redirect } from 'react-router-dom';
 import { VolunteerContext } from '../../App';
 
 const PrivateRoute = ({children, ...rest}) => {
-    const [projects, setProjects, loggedInUser, setLoggedInUser] = useContext(VolunteerContext);
-    
+    const [ loggedInUser, setLoggedInUser] = useContext(VolunteerContext);
+
     return (
         <Route
           {...rest} render={({ location }) =>

@@ -19,7 +19,7 @@ const Login = () => {
         password: '',
     })
 
-    const [projects, setProjects, loggedInUser, setLoggedInUser] = useContext(VolunteerContext);
+    const [loggedInUser, setLoggedInUser] = useContext(VolunteerContext);
       let history = useHistory();
       let location = useLocation();
       let { from } = location.state || { from: { pathname: "/" } };
