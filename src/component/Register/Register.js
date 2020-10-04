@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState, useContext } from 'react';
+import { useParams, Link, useHistory } from 'react-router-dom';
+import { VolunteerContext } from '../../App';
 // import Grid from '@material-ui/core/Grid';
 // import DateFnsUtils from '@date-io/date-fns';
 // import {
@@ -9,6 +10,8 @@ import { useParams } from 'react-router-dom';
 
 
 const Register = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(VolunteerContext);
+    
     const {eventKey} = useParams();
     const [event, setEvent] = useState({});
     useEffect(() =>{
@@ -22,14 +25,39 @@ const Register = () => {
     // const handleDateChange = (date) => {
     //   setSelectedDate(date);
     // };
-    
+    const userDescription = document.getElementById("description");
+    const history = useHistory();
+      
+    const handleRegister  = (e) => {
+        console.log("form submitted");
+        const description = userDescription.value;
+        const eventDetail  = { ...loggedInUser, description, ...event,  orderTime: new Date()};
+        console.log(eventDetail);
+        fetch("http://localhost:5000/addRegisteredEvent", {
+            method: 'POST',
+            headers:{ 
+             "Content-Type": "application/json"
+            },
+            body: JSON.stringify(eventDetail)
+        })
+        .then (res => res.json())
+        .then (data => {
+                if(data){
+
+                    console.log(data);
+                    
+
+                   
+                }
+        });
+        e.preventDefault();
+        history.push("/events");
+    };
 
 
     return (
         
-        <div class="container">
-            
-           
+        <div class="container">          
                 <div class="row mt-5">
                     <div class="col-lg-12">
                         <div className="bookingForm">
@@ -37,11 +65,11 @@ const Register = () => {
                              <form>
                                  <div class="form-group">
                                      <label for="Full_name">Full name</label> 
-                                     <input type="text" class="form-control" id="Full_name" placeholder="Full name" style={{backgroundColor:"#F2F2F2"}}/>
+                                     <input type="text" class="form-control" id="Full_name" placeholder="Full name" style={{backgroundColor:"#F2F2F2"}} value = {loggedInUser.name}/>
                                  </div>
                                 <div class="form-group">
                                     <label for="Username">Username or Email</label>
-                                    <input type="text" class="form-control" id="Username" placeholder="Username or Email" style={{backgroundColor:"#F2F2F2"}}/>
+                                    <input type="text" class="form-control" id="Username" placeholder="Username or Email" style={{backgroundColor:"#F2F2F2"}} value = {loggedInUser.email}/>
                                 </div>
                                 {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                     <Grid container justify="space-around">
@@ -60,20 +88,18 @@ const Register = () => {
                                     </Grid>
                                 </MuiPickersUtilsProvider> */}
                                 <div class="form-group">
-                                     <label for="Description">Description</label> 
-                                     <input type="text" class="form-control" id="Description" placeholder="Description" style={{backgroundColor:"#F2F2F2"}}/>
+                                     <label for="description">Description</label> 
+                                     <input type="text" class="form-control" id="description" placeholder="Description" style={{backgroundColor:"#F2F2F2"}}/>
                                 </div>
                                 <div class="form-group">
                                      <label for="ventName">Event Name</label>
-                                     {/* {project && 
-                                     <input type="text" class="form-control" id="eventName" placeholder="Event Name" style={{backgroundColor:"#F2F2F2"}} value = {project.title}/>
-                                     }  */}
-                                    
+
                                      <input type="text" class="form-control" id="eventName" placeholder="Event Name" style={{backgroundColor:"#F2F2F2"}} value = {event.title}/>
                                      
                                 </div>
-                                <button  class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "400px", margin:"10px"}}>Registration</button>     
+                                <button onClick = {handleRegister} class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "400px", margin:"10px"}}>Registration</button>   
                              </form>
+
                          </div>
                      </div>
                  </div>

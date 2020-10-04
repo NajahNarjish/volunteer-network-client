@@ -37,7 +37,9 @@ const Home = () => {
                     
                     {
                         
-                        projects.map (item => <Link to= "/register"><Project project ={item}></Project></Link>)
+                        projects.map (item => <Project project ={item}></Project>)
+                        // projects.map (item => <Link to= "/register"><Project project ={item}></Project></Link>)
+
                         
                     }
 

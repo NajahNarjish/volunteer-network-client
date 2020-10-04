@@ -41,7 +41,7 @@ const Login = () => {
                 setUser(singedInUser);
                 setLoggedInUser(singedInUser);
                 history.replace(from);
-                console.log(res.user);
+                // console.log(res.user);
             })
             .catch(err => {
                 console.log(err);

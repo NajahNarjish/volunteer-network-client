@@ -12,6 +12,7 @@ import Home from './component/Home/Home';
 import Register from './component/Register/Register';
 import Login from './component/Login/Login';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
+import Events from './component/Events/Events';
 
 export const VolunteerContext = createContext();
 
@@ -34,6 +35,9 @@ function App() {
           </PrivateRoute>
           <Route path = "/login">
             <Login></Login>
+          </Route>
+          <Route path = "/events">
+            <Events></Events>
           </Route>
         </Switch>
 
