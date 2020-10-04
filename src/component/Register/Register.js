@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams, Link, useHistory } from 'react-router-dom';
+import { useParams,  useHistory } from 'react-router-dom';
 import { VolunteerContext } from '../../App';
-// import Grid from '@material-ui/core/Grid';
-// import DateFnsUtils from '@date-io/date-fns';
-// import {
-//   MuiPickersUtilsProvider,
-//   KeyboardDatePicker,
-// } from '@material-ui/pickers';
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 
 const Register = () => {
@@ -20,18 +20,21 @@ const Register = () => {
         .then(data => setEvent(data))
     }, [eventKey]);
 
-    // const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+    const [selectedDate, setSelectedDate] = useState({
+        participationDate: new Date()
+    });
   
-    // const handleDateChange = (date) => {
-    //   setSelectedDate(date);
-    // };
+    const handleDate = (date) => {
+        const newDate = {...selectedDate};
+        newDate.participationDate = date;
+        setSelectedDate(newDate);
+    };
     const userDescription = document.getElementById("description");
     const history = useHistory();
       
     const handleRegister  = (e) => {
-        console.log("form submitted");
         const description = userDescription.value;
-        const eventDetail  = { ...loggedInUser, description, ...event,  orderTime: new Date()};
+        const eventDetail  = { ...loggedInUser, description, ...event, ...selectedDate};
         console.log(eventDetail);
         fetch("http://localhost:5000/addRegisteredEvent", {
             method: 'POST',
@@ -43,11 +46,7 @@ const Register = () => {
         .then (res => res.json())
         .then (data => {
                 if(data){
-
-                    console.log(data);
-                    
-
-                   
+                    // console.log(data);    
                 }
         });
         e.preventDefault();
@@ -71,22 +70,22 @@ const Register = () => {
                                     <label for="Username">Username or Email</label>
                                     <input type="text" class="form-control" id="Username" placeholder="Username or Email" style={{backgroundColor:"#F2F2F2"}} value = {loggedInUser.email}/>
                                 </div>
-                                {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                     <Grid container justify="space-around">
 
                                         <KeyboardDatePicker
                                         margin="normal"
                                         id="date-picker-dialog"
-                                        label="Date picker dialog"
-                                        format="MM/dd/yyyy"
-                                        value={selectedDate}
-                                        onChange={handleDateChange}
+                                        label="Date of participation"
+                                        format="dd/mm/yyyy"
+                                        value={selectedDate.participationDate}
+                                        onChange={handleDate}
                                         KeyboardButtonProps={{
                                             'aria-label': 'change date',
                                         }}
                                         />
                                     </Grid>
-                                </MuiPickersUtilsProvider> */}
+                                </MuiPickersUtilsProvider>
                                 <div class="form-group">
                                      <label for="description">Description</label> 
                                      <input type="text" class="form-control" id="description" placeholder="Description" style={{backgroundColor:"#F2F2F2"}}/>

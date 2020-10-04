@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleEvent = (props) => {
-    const { image, title, _id } = props.registeredEvent;
+    const { image, title, _id, participationDate } = props.registeredEvent;
     
     const deleteRegistration = () => {
         fetch(("http://localhost:5000/delete/" + _id), {
@@ -25,7 +25,7 @@ const SingleEvent = (props) => {
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{title}</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">{(new Date(participationDate).toDateString("dd/mm/yyyy"))}</p>
                                 <button onClick={() => deleteRegistration()}>delete</button>
                             </div>
                         </div>

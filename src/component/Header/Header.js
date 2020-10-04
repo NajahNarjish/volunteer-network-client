@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from "../../images/logo.png";
 // import "./Header.css";
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../App';
+import {  VolunteerContext } from '../../App';
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(VolunteerContext);
+
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light">
@@ -30,20 +32,19 @@ const Header = () => {
                             
                             <li class="nav-item">
                                 {
-                                    // loggedInUser.email ? <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Sign out</button> :
-                                    <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={<Link to="/login"></Link>}>Login</button>
+                                    loggedInUser.email ? <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Log out</button> :
+                                    <Link to="/login"><button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Login</button></Link>
                                 }
                                 
                             </li> 
                             <li class="nav-item">
                                 {
-                                    // loggedInUser.email ? <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Sign out</button> :
                                     <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={<Link to="/admin"></Link>}>Admin</button>
                                 }
                                 
                             </li> 
                             <li class="nav-item">
-                                {/* <h6 style = {{marginLeft:"5px"}}>{loggedInUser.displayName || loggedInUser.name}</h6> */}
+                                <h6 style = {{marginLeft:"5px"}}>{loggedInUser.displayName || loggedInUser.name}</h6>
                             </li> 
                         </ul> 
                     </div>
