@@ -11,15 +11,18 @@ import {
 import Header from './component/Header/Header';
 import Home from './component/Home/Home';
 import Register from './component/Register/Register';
+import Login from './component/Login/Login';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 
 export const VolunteerContext = createContext();
 
 function App() {
   const fakeProjects = fakedata;
   const [projects, setProjects] = useState(fakeProjects);
-  // const [project, setProject] = useState();
+
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <VolunteerContext.Provider value={[projects, setProjects]}>
+    <VolunteerContext.Provider value={[projects, setProjects, loggedInUser, setLoggedInUser]}>
       {/* <p>email: {loggedInUser.email}</p>  */}
       <Router>
         <Header></Header>
@@ -30,12 +33,12 @@ function App() {
           {/* <PrivateRoute path = "/register">
             <Register></Register>
           </PrivateRoute> */}
-          <Route path = "/register/:eventKey">
+          <PrivateRoute path = "/register/:eventKey">
             <Register></Register>
-          </Route>
-          {/* <Route path = "/login">
+          </PrivateRoute>
+          <Route path = "/login">
             <Login></Login>
-          </Route> */}
+          </Route>
         </Switch>
 
       </Router>    

@@ -1,0 +1,11 @@
+.login-form{
+    margin: 30px 100px;
+    border: 1px solid black;
+    padding: 50px 50px;
+}
+.googleButton{
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+

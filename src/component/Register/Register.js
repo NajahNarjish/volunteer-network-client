@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import fakedata from '../../fakedata/fakedata.js';
-import { VolunteerContext } from '../../App';
 import { useParams } from 'react-router-dom';
 // import Grid from '@material-ui/core/Grid';
 // import DateFnsUtils from '@date-io/date-fns';
@@ -13,7 +12,7 @@ import { useParams } from 'react-router-dom';
 const Register = () => {
     const {eventKey} = useParams();
     const project = fakedata.find(item => item.key === eventKey);
-    // const [projects, setProjects, project, setProject] = useContext(VolunteerContext);
+
     // const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
   
     // const handleDateChange = (date) => {

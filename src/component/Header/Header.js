@@ -20,7 +20,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#destination" style = {{color:"black"}}>Donation help</a>
+                                <a class="nav-link" href="#destination" style = {{color:"black"}}>Donation</a>
                             </li>
                             <li class="nav-item active"> 
                                 <Link to= "/events">
