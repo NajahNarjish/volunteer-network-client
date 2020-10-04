@@ -8,15 +8,11 @@ const SingleEvent = (props) => {
             method: 'DELETE'
         })
             .then(res => res.json())
-            .then(result => {
+            .then(result => { 
                 if(result){
-                    // event.target.parentNode.style.display = "none";
                     console.log("deleted successfully");
-                    
-                }
-                
-            })
-
+                }    
+            });       
     }
 
     return (

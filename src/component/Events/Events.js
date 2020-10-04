@@ -8,7 +8,7 @@ const Events = () => {
         fetch("http://localhost:5000/showRegisteredEvents")
         .then(res => res.json())
         .then(data => setRegisteredEvents(data))
-    }, [])
+    }, [registeredEvents])
     return (
         
             <div className="container">
