@@ -29,17 +29,17 @@ const Header = () => {
                                     <a class="nav-link" href="#events" style = {{color:"black"}}>Events</a>
                                 </Link>
                             </li>
+
+                            <li class="nav-item active"> 
+                                <Link to= "/addevents">
+                                    <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Admin</button>
+                                </Link>
+                            </li>
                             
                             <li class="nav-item">
                                 {
                                     loggedInUser.email ? <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Log out</button> :
                                     <Link to="/login"><button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Login</button></Link>
-                                }
-                                
-                            </li> 
-                            <li class="nav-item">
-                                {
-                                    <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={<Link to="/admin"></Link>}>Admin</button>
                                 }
                                 
                             </li> 

@@ -8,6 +8,9 @@ import { VolunteerContext } from '../../App';
 const Home = () => {
     const [projects, setProjects] = useState([]);
 
+    // test
+    // const [loggedInUser, setLoggedInUser, projects, setProjects] = useContext(VolunteerContext);
+
     useEffect(() => {
         fetch("http://localhost:5000/events")
         .then(res => res.json())

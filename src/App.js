@@ -1,5 +1,4 @@
 import React, { useState, createContext } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -13,14 +12,17 @@ import Register from './component/Register/Register';
 import Login from './component/Login/Login';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import Events from './component/Events/Events';
+import AddEvents from './component/AddEvents/AddEvents';
 
 export const VolunteerContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  // test
+  // const [projects, setProjects] = useState([]);
   return (
     <VolunteerContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      {/* <p>email: {loggedInUser.email}</p>  */}
+      
       <Router>
         <Header></Header>
         <Switch>
@@ -39,6 +41,9 @@ function App() {
           <Route path = "/events">
             <Events></Events>
           </Route>
+          {/* <Route path = "/addevents">
+            <AddEvents></AddEvents>
+          </Route> */}
         </Switch>
 
       </Router>    
