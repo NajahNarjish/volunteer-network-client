@@ -48,7 +48,6 @@ const Register = () => {
         history.push("/events");
     };
 
-
     return (      
         <div class="container">          
                 <div class="row mt-5">
@@ -101,7 +100,6 @@ const Register = () => {
                      <div class="col-12 col-lg-2"></div>
                  </div>
              </div>
-
     );
 };
 

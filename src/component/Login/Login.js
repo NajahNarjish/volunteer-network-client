@@ -71,13 +71,14 @@ const Login = () => {
                 <div class="col-12 col-lg-8 " style={{ textAlign: 'center' }}>
                     <div className='login-form'>
                     <h1>Login with</h1>
-                        {
+                        { 
                             user.isSignedIn ? <button onClick={handleSignOut}>Sign out from google</button> :
-                                <button className='googleButton' onClick={handleGoogleSignIn}>
+                               <button className='googleButton' onClick={handleGoogleSignIn}>
                                     <img src={google} style={{ width: "10%"}} alt="" />
                                     <span style={{ paddingLeft: "10px"}}>Continue with Google</span>
                                 </button>
                         }
+             
                     </div>   
                 </div>
                 <div class="col-12 col-lg-2"></div>

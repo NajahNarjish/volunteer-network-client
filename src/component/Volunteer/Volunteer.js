@@ -1,21 +1,24 @@
 import React from 'react';
+import trash from "../../images/trash.png";
 
 const Volunteer = (props) => {
-    const { name, email, title } = props.event;
-    
+    const { name, email, participationDate,  title, _id } = props.event;
+    const deleteRegistration = () => {
+        fetch(("https://tranquil-reef-85303.herokuapp.com/delete/" + _id), {
+            method: 'DELETE'
+        })
+        console.log("deleted");
+                 
+    }
+
     return (
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-2"></div>
-                <div class="col-12 col-lg-8">
-                    <p><span>Volunteer-Name:{name}</span>
-                    <span>Email:{email}</span>
-                    <span>Event name:{title}</span>
-                    </p>
-                </div>
-                <div class="col-12 col-lg-2"></div>
-            </div>      
-        </div>
+        <tr>
+            <td>{name}</td>
+            <td>{email}</td>
+            <td>{(new Date(participationDate).toDateString("dd/mm/yyyy"))}</td>
+            <td>{title}</td>
+            <td><img onClick={() => deleteRegistration()} class = "w-50" style = {{backgroundColor:"red"}}src ={trash} alt="trash"></img></td>
+        </tr>
     );
 };
 
