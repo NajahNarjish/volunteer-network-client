@@ -51,8 +51,8 @@ var projects = [
         image: 'https://i.imgur.com/jI0etGE.png',
     },
     {   
-        title: 'Build birdhouses for your neighbors',
-        key: 'buildbirdhousesforyourneighbors',
+        title: 'Build birdhouses',
+        key: 'buildbirdhouses',
         image: 'https://i.imgur.com/stlrVQK.png',
     },
     {   
@@ -73,8 +73,8 @@ var projects = [
         image: 'https://i.imgur.com/h28FSez.png',
     },
     {   
-        title: 'Teach people how to register to vote',
-        key: 'teachpeoplehowtoregistertovote',
+        title: 'Help people to vote',
+        key: 'helppeopletovote',
         image: 'https://i.imgur.com/VzGL90M.png',
     },
     {   
