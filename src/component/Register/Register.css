@@ -1,0 +1,30 @@
+.bookingForm{
+    margin: 30px 100px;
+    border: 3px solid black;
+    padding: 10px 0;
+}
+.red{
+    color:red;
+}
+
+.booking-form input {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding:5px;
+    border: 1px solid gray;
+    border-radius:5px;
+    width: 300px;
+    
+}
+.error{
+    color: red;
+}
+
+.submitButton{
+    background-color:#F9A51A; 
+    width: 400px; 
+    margin:20px;
+}
+
+

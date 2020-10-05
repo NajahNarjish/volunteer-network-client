@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
+import "./Header.css";
 import logo from "../../images/logo.png";
-// import "./Header.css";
 import { Link } from 'react-router-dom';
 import {  VolunteerContext } from '../../App';
 
@@ -8,12 +8,13 @@ const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(VolunteerContext);
 
     return (
-        <div>
+        <div class = "header_div">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand w-25" href="#">
+                    <a class="navbar-brand w-25" href="#home">
                         <img class="img-fluid" src={logo} alt="logo" style = {{width:"50%"}}/>
                     </a>
+
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav align-items-center">
                             <li class="nav-item active"> 
@@ -21,7 +22,6 @@ const Header = () => {
                                     <a class="nav-link" href="#home" style = {{color:"black"}}>Home </a>
                                 </Link>
                             </li>
-                            
                             <li class="nav-item active"> 
                                 <Link to= "/events">
                                     <a class="nav-link" href="#events" style = {{color:"black"}}>Events</a>
@@ -29,22 +29,19 @@ const Header = () => {
                             </li>
                             <li class="nav-item active"> 
                                 <Link to= "/addNew">
-                                    <a class="nav-link" href="#test" style = {{color:"black"}}>Add-New</a>
+                                    <a class="nav-link" href="#addNew" style = {{color:"black"}}>Add-New</a>
                                 </Link>
                             </li>
-
                             <li class="nav-item active"> 
-                                <Link to= "/addEvents">
+                                <Link to= "/admin">
                                     <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Admin</button>
                                 </Link>
                             </li>
-                            
                             <li class="nav-item">
                                 {
                                     loggedInUser.email ? <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Log out</button> :
                                     <Link to="/login"><button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Login</button></Link>
-                                }
-                                
+                                } 
                             </li> 
                             <li class="nav-item">
                                 <h6 style = {{marginLeft:"5px"}}>{loggedInUser.displayName || loggedInUser.name}</h6>

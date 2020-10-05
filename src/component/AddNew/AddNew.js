@@ -1,5 +1,4 @@
 import React from 'react';
-// import fakedata from '../../fakedata/fakedata.js';
 
 const AddNew = () => {
     const handleAddEvent = () => {
@@ -10,12 +9,14 @@ const AddNew = () => {
                 "Content-type": "application/json"
             },
             body: JSON.stringify(event)
-
         })
     }
+
     return (
         <div>
-            <button onClick = {handleAddEvent}>Add event</button>
+             <div class = "container">
+                <button onClick = {handleAddEvent}>Add event</button>
+            </div>    
         </div>
     );
 };

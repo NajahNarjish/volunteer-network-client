@@ -7,12 +7,7 @@ const SingleEvent = (props) => {
         fetch(("https://tranquil-reef-85303.herokuapp.com/delete/" + _id), {
             method: 'DELETE'
         })
-            .then(res => res.json())
-            .then(result => { 
-                if(result){
-                    console.log("deleted successfully");
-                }    
-            });       
+                 
     }
 
     return (

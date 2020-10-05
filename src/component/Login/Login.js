@@ -2,15 +2,13 @@ import React, { useState, useContext } from 'react';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { useHistory, useLocation, Link } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import "./Login.css";
 import google from "../../images/google.png";
 import { VolunteerContext } from '../../App';
 
 
 const Login = () => {
-
-    //   const [newUser, setNewUser] = useState(false);
     const [user, setUser] = useState({
         isSignedIn: false,
         name: '',
@@ -23,7 +21,8 @@ const Login = () => {
       let history = useHistory();
       let location = useLocation();
       let { from } = location.state || { from: { pathname: "/" } };
-    if (firebase.apps.length === 0){
+    
+      if (firebase.apps.length === 0){
         firebase.initializeApp(firebaseConfig);
     }
     
@@ -41,7 +40,6 @@ const Login = () => {
                 setUser(singedInUser);
                 setLoggedInUser(singedInUser);
                 history.replace(from);
-                // console.log(res.user);
             })
             .catch(err => {
                 console.log(err);
@@ -66,7 +64,6 @@ const Login = () => {
             })
     }
 
-
     return (
         <div class="container">
             <div class="row">
@@ -74,7 +71,6 @@ const Login = () => {
                 <div class="col-12 col-lg-8 " style={{ textAlign: 'center' }}>
                     <div className='login-form'>
                     <h1>Login with</h1>
-
                         {
                             user.isSignedIn ? <button onClick={handleSignOut}>Sign out from google</button> :
                                 <button className='googleButton' onClick={handleGoogleSignIn}>
@@ -82,8 +78,7 @@ const Login = () => {
                                     <span style={{ paddingLeft: "10px"}}>Continue with Google</span>
                                 </button>
                         }
-                    </div>
-                    
+                    </div>   
                 </div>
                 <div class="col-12 col-lg-2"></div>
             </div>

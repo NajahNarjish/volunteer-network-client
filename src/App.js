@@ -11,9 +11,9 @@ import Register from './component/Register/Register';
 import Login from './component/Login/Login';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import Events from './component/Events/Events';
-import AddEvents from './component/AddEvents/AddEvents';
 import AddNew from './component/AddNew/AddNew';
 import NotFound from './component/NotFound/NotFound';
+import Admin from './component/Admin/Admin';
 
 
 export const VolunteerContext = createContext();
@@ -38,8 +38,8 @@ function App() {
           <Route path = "/events">
             <Events></Events>
           </Route>
-          <Route path = "/addEvents">
-            <AddEvents></AddEvents>
+          <Route path = "/admin">
+            <Admin></Admin>
           </Route>
           <Route path = "/addNew">
             <AddNew></AddNew>

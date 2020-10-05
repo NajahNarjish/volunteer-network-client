@@ -43,64 +43,62 @@ const Register = () => {
             },
             body: JSON.stringify(eventDetail)
         })
-        .then (res => res.json())
-        .then (data => {
-                if(data){
-                    // console.log(data);    
-                }
-        });
+        
         e.preventDefault();
         history.push("/events");
     };
 
 
-    return (
-        
+    return (      
         <div class="container">          
                 <div class="row mt-5">
-                    <div class="col-lg-12">
+                    <div class="col-12 col-lg-2"></div>
+                    <div class="col-lg-8">
                         <div className="bookingForm">
-                            <h4>Register as a Volunteer</h4>
-                             <form>
-                                 <div class="form-group">
+                            <h4 id= "red">Register as a Volunteer</h4>
+                            <form>
+                                <div class="form-group">
                                      <label for="Full_name">Full name</label> 
                                      <input type="text" class="form-control" id="Full_name" placeholder="Full name" style={{backgroundColor:"#F2F2F2"}} value = {loggedInUser.name}/>
-                                 </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="Username">Username or Email</label>
                                     <input type="text" class="form-control" id="Username" placeholder="Username or Email" style={{backgroundColor:"#F2F2F2"}} value = {loggedInUser.email}/>
                                 </div>
-                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                    <Grid container justify="space-around">
-
-                                        <KeyboardDatePicker
-                                        margin="normal"
-                                        id="date-picker-dialog"
-                                        label="Date of participation"
-                                        format="dd/MM/yyyy"
-                                        value={selectedDate.participationDate}
-                                        onChange={handleDate}
-                                        KeyboardButtonProps={{
-                                            'aria-label': 'change date',
-                                        }}
-                                        />
-                                    </Grid>
-                                </MuiPickersUtilsProvider>
+                                <div class="form-group">
+                                    <label for="Date">Date of Participation</label>
+                                    <div class="text-left">
+                                        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                            <Grid container justify="space-around">
+                                                <KeyboardDatePicker
+                                                    margin="normal"
+                                                    id="date-picker-dialog"
+                                                    label="Date of participation"
+                                                    format="dd/MM/yyyy"
+                                                    value={selectedDate.participationDate}
+                                                    onChange={handleDate}
+                                                    KeyboardButtonProps={{
+                                                        'aria-label': 'change date',
+                                                    }}
+                                                />
+                                            </Grid>
+                                        </MuiPickersUtilsProvider>
+                                    </div>   
+                                </div>
+                                
                                 <div class="form-group">
                                      <label for="description">Description</label> 
                                      <input type="text" class="form-control" id="description" placeholder="Description" style={{backgroundColor:"#F2F2F2"}}/>
                                 </div>
                                 <div class="form-group">
                                      <label for="ventName">Event Name</label>
-
-                                     <input type="text" class="form-control" id="eventName" placeholder="Event Name" style={{backgroundColor:"#F2F2F2"}} value = {event.title}/>
-                                     
+                                     <input type="text" class="form-control" id="eventName" placeholder="Event Name" style={{backgroundColor:"#F2F2F2"}} value = {event.title}/>                                     
                                 </div>
-                                <button onClick = {handleRegister} class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "400px", margin:"10px"}}>Register</button>   
-                             </form>
-
+                                <button onClick = {handleRegister} class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "400px"}}>Register</button>   
+                            </form>
                          </div>
                      </div>
+                     <div class="col-12 col-lg-2"></div>
                  </div>
              </div>
 

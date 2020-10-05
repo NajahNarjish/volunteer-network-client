@@ -23,9 +23,7 @@ const Events = () => {
                 </div>
 
             </div>
-            
-            
-        
+       
     );
 };
 
