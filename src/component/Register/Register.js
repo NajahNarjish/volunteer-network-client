@@ -77,7 +77,7 @@ const Register = () => {
                                         margin="normal"
                                         id="date-picker-dialog"
                                         label="Date of participation"
-                                        format="dd/mm/yyyy"
+                                        format="dd/MM/yyyy"
                                         value={selectedDate.participationDate}
                                         onChange={handleDate}
                                         KeyboardButtonProps={{
