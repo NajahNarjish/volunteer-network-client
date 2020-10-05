@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Header from './component/Header/Header';
 import Home from './component/Home/Home';
@@ -12,25 +11,24 @@ import Register from './component/Register/Register';
 import Login from './component/Login/Login';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import Events from './component/Events/Events';
+import AddEvents from './component/AddEvents/AddEvents';
+import AddNew from './component/AddNew/AddNew';
+import NotFound from './component/NotFound/NotFound';
+
 
 export const VolunteerContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  // test
-  // const [projects, setProjects] = useState([]);
+  
   return (
-    <VolunteerContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      
+    <VolunteerContext.Provider value={[loggedInUser, setLoggedInUser]}>   
       <Router>
         <Header></Header>
         <Switch>
           <Route path = "/home">
             <Home></Home>
           </Route>
-          {/* <PrivateRoute path = "/register">
-            <Register></Register>
-          </PrivateRoute> */}
           <PrivateRoute path = "/register/:eventKey">
             <Register></Register>
           </PrivateRoute>
@@ -40,11 +38,19 @@ function App() {
           <Route path = "/events">
             <Events></Events>
           </Route>
-          {/* <Route path = "/addevents">
+          <Route path = "/addEvents">
             <AddEvents></AddEvents>
-          </Route> */}
+          </Route>
+          <Route path = "/addNew">
+            <AddNew></AddNew>
+          </Route>
+          <Route exact path = "/">
+            <Home></Home>
+          </Route>
+          <Route path = "*">
+            <NotFound></NotFound>   
+          </Route>
         </Switch>
-
       </Router>    
     </VolunteerContext.Provider> 
   );

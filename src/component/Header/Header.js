@@ -21,17 +21,20 @@ const Header = () => {
                                     <a class="nav-link" href="#home" style = {{color:"black"}}>Home </a>
                                 </Link>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#destination" style = {{color:"black"}}>Donation</a>
-                            </li>
+                            
                             <li class="nav-item active"> 
                                 <Link to= "/events">
                                     <a class="nav-link" href="#events" style = {{color:"black"}}>Events</a>
                                 </Link>
                             </li>
+                            <li class="nav-item active"> 
+                                <Link to= "/addNew">
+                                    <a class="nav-link" href="#test" style = {{color:"black"}}>Add-New</a>
+                                </Link>
+                            </li>
 
                             <li class="nav-item active"> 
-                                <Link to= "/addevents">
+                                <Link to= "/addEvents">
                                     <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Admin</button>
                                 </Link>
                             </li>
