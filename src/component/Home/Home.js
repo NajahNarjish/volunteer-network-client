@@ -12,12 +12,12 @@ const Home = () => {
     // const [loggedInUser, setLoggedInUser, projects, setProjects] = useContext(VolunteerContext);
 
     useEffect(() => {
-        fetch("http://localhost:5000/events")
+        fetch("https://tranquil-reef-85303.herokuapp.com/events")
         .then(res => res.json())
         .then(data => setProjects(data))
     }, [])
     const handleAddEvent = () => {
-        fetch("http://localhost:5000/addEvent", {
+        fetch("https://tranquil-reef-85303.herokuapp.com/addEvent", {
             method: 'POST',
             headers: {
                 "Content-type": "application/json"

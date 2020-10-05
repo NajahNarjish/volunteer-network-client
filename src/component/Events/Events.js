@@ -8,7 +8,7 @@ const Events = () => {
     const [registeredEvents, setRegisteredEvents] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/showRegisteredEvents?email="+ loggedInUser.email)
+        fetch("https://tranquil-reef-85303.herokuapp.com/showRegisteredEvents?email="+ loggedInUser.email)
         .then(res => res.json())
         .then(data => setRegisteredEvents(data))
     }, [registeredEvents])

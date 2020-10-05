@@ -4,7 +4,7 @@ const SingleEvent = (props) => {
     const { image, title, _id, participationDate } = props.registeredEvent;
     
     const deleteRegistration = () => {
-        fetch(("http://localhost:5000/delete/" + _id), {
+        fetch(("https://tranquil-reef-85303.herokuapp.com/delete/" + _id), {
             method: 'DELETE'
         })
             .then(res => res.json())

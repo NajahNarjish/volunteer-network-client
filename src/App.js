@@ -12,7 +12,6 @@ import Register from './component/Register/Register';
 import Login from './component/Login/Login';
 import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 import Events from './component/Events/Events';
-import AddEvents from './component/AddEvents/AddEvents';
 
 export const VolunteerContext = createContext();
 

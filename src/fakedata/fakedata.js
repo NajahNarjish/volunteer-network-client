@@ -75,7 +75,7 @@ var projects = [
     {   
         title: 'Teach people how to register to vote',
         key: 'teachpeoplehowtoregistertovote',
-        image: 'https://i.imgur.com/6rIWLOM.png',
+        image: 'https://i.imgur.com/VzGL90M.png',
     },
     {   
         title: 'Clean up your local park',

@@ -15,7 +15,7 @@ const Register = () => {
     const {eventKey} = useParams();
     const [event, setEvent] = useState({});
     useEffect(() =>{
-        fetch("http://localhost:5000/event/" + eventKey)
+        fetch("https://tranquil-reef-85303.herokuapp.com/event/" + eventKey)
         .then(res => res.json())
         .then(data => setEvent(data))
     }, [eventKey]);
@@ -36,7 +36,7 @@ const Register = () => {
         const description = userDescription.value;
         const eventDetail  = { ...loggedInUser, description, ...event, ...selectedDate};
         console.log(eventDetail);
-        fetch("http://localhost:5000/addRegisteredEvent", {
+        fetch("https://tranquil-reef-85303.herokuapp.com/addRegisteredEvent", {
             method: 'POST',
             headers:{ 
              "Content-Type": "application/json"
