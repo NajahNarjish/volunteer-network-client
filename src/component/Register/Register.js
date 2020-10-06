@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams,  useHistory } from 'react-router-dom';
 import { VolunteerContext } from '../../App';
 import Grid from '@material-ui/core/Grid';
+import "./Register.css"
 import DateFnsUtils from '@date-io/date-fns';
 import {
   MuiPickersUtilsProvider,
@@ -54,11 +55,11 @@ const Register = () => {
                     <div class="col-12 col-lg-2"></div>
                     <div class="col-lg-8">
                         <div className="bookingForm">
-                            <h4 id= "red">Register as a Volunteer</h4>
-                            <form>
+                            <h4 class = "text-center">Register as a Volunteer</h4>
+                            <form class = "px-5">
                                 <div class="form-group">
                                      <label for="Full_name">Full name</label> 
-                                     <input type="text" class="form-control" id="Full_name" placeholder="Full name" style={{backgroundColor:"#F2F2F2"}} value = {loggedInUser.name}/>
+                                     <input type="text" class="form-control" id="Full_name" placeholder="Full name"  style={{backgroundColor:"#F2F2F2"}}  value = {loggedInUser.name}/>
                                 </div>
                                 <div class="form-group">
                                     <label for="Username">Username or Email</label>
@@ -66,13 +67,13 @@ const Register = () => {
                                 </div>
                                 <div class="form-group">
                                     <label for="Date">Date of Participation</label>
-                                    <div class="text-left">
+                                    <div class="text-left" style={{backgroundColor:"#F2F2F2"}}>
                                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                             <Grid container justify="space-around">
                                                 <KeyboardDatePicker
                                                     margin="normal"
                                                     id="date-picker-dialog"
-                                                    label="Date of participation"
+                                                    // label="Date of participation"
                                                     format="dd/MM/yyyy"
                                                     value={selectedDate.participationDate}
                                                     onChange={handleDate}
@@ -87,13 +88,13 @@ const Register = () => {
                                 
                                 <div class="form-group">
                                      <label for="description">Description</label> 
-                                     <input type="text" class="form-control" id="description" placeholder="Description" style={{backgroundColor:"#F2F2F2"}}/>
+                                     <input type="text" class="form-control" id="description" style={{backgroundColor:"#F2F2F2"}} placeholder="Description" />
                                 </div>
                                 <div class="form-group">
                                      <label for="ventName">Event Name</label>
                                      <input type="text" class="form-control" id="eventName" placeholder="Event Name" style={{backgroundColor:"#F2F2F2"}} value = {event.title}/>                                     
                                 </div>
-                                <button onClick = {handleRegister} class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "400px"}}>Register</button>   
+                                <button onClick = {handleRegister} class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "650px"}}>Register</button>   
                             </form>
                          </div>
                      </div>
