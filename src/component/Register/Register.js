@@ -54,7 +54,7 @@ const Register = () => {
                 <div class="row mt-5">
                     <div class="col-12 col-lg-2"></div>
                     <div class="col-lg-8">
-                        <div className="bookingForm">
+                        <div className="registrationForm">
                             <h4 class = "text-center">Register as a Volunteer</h4>
                             <form class = "px-5">
                                 <div class="form-group">

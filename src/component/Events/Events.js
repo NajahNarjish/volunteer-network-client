@@ -19,11 +19,8 @@ const Events = () => {
                 {
                     registeredEvents.map(item =><SingleEvent registeredEvent = {item} ></SingleEvent>)
                 }
-
                 </div>
-
             </div>
-       
     );
 };
 

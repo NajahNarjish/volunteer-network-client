@@ -1,10 +1,9 @@
-.bookingForm{
-    /* margin: 30px 100px; */
+.registrationForm{
     border: 2px solid black;
     padding: 25px 0;
 }
 
-.bookingForm input {
+.registrationForm input {
     display: block;
     margin: 0 auto;
     margin-top: 10px;
@@ -16,12 +15,6 @@
 }
 .error{
     color: red;
-}
-
-.submitButton{
-    background-color:#F9A51A; 
-    width: 400px; 
-    margin:20px;
 }
 
 

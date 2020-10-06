@@ -28,11 +28,6 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li class="nav-item active"> 
-                                <Link to= "/addNew">
-                                    <a class="nav-link" href="#addNew" style = {{color:"black"}}>Add-New</a>
-                                </Link>
-                            </li>
-                            <li class="nav-item active"> 
                                 <Link to= "/admin">
                                     <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Admin</button>
                                 </Link>
