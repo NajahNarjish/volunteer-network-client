@@ -1,69 +1,36 @@
-live site of this project: https://volunteer-network-b39a7.web.app/home
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Volunteer Network
 
-## Available Scripts
+### Live site link :https://volunteer-network-b39a7.web.app/home
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+* [Introduction](#introduction)
+* [Features](#features)
+* [Framework library and packages](#framework-library-and-packages)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Introduction
 
-### `npm test`
+This website is for an organization which organizes varoius charity events and one can participate in any event as a volunteer. He/She can choose more than one event. Primarily there are 20 events but admin can add more if he/she wants.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Server site git repo :https://github.com/NajahNarjish/volunteer-network-server
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* It has a hompage with multiple react components and primarily it is offering three services.
+* Homepage is designed with Bootsrap- 4, React slick carousel and css3.
+* If a client chooses one service to take, he/she has to Login first via Google sign in method. 
+* This authentication was done by firebase.
+* Client can see a dashboard with several options.
+* Option Order is for making an service order from client .
+* Service list is to see all orders placed, and in the review section client can add review
+* On the other hand, Admin has different funtions as he/she can see all clients list, can add  new service and can add admin
+* This differentiation in functionallity was done by filtering login email address
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Framework library and packages
+* React
+* Bootstrap 4
+* Material-UI
+* Node Js
+* Firebase
