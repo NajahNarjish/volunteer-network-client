@@ -17,15 +17,15 @@ This website is for an organization which organizes varoius charity events and o
 
 ## Features
 
-* It has a hompage with multiple react components and primarily it is offering three services.
-* Homepage is designed with Bootsrap- 4, React slick carousel and css3.
-* If a client chooses one service to take, he/she has to Login first via Google sign in method. 
-* This authentication was done by firebase.
-* Client can see a dashboard with several options.
-* Option Order is for making an service order from client .
-* Service list is to see all orders placed, and in the review section client can add review
-* On the other hand, Admin has different funtions as he/she can see all clients list, can add  new service and can add admin
-* This differentiation in functionallity was done by filtering login email address
+* It has a homepage containing 20 different volunteering events, but admin may add more.
+* Home page is done by Bootstrap 4.
+* By selecting one of these options, volunteer goes to registration page, but first has to face Login page.
+* After Login via google sign in method by firebase authentication, volunteer can register his/her event.
+* This form has a calender which is designed by Material-UI.
+* After the form submission, volunteer goes to another page where he/she can see all his/her events. These are stored in MongoDB.
+* Volutnteer can also remove his/her event, and it is removed from the database as well.
+* Admin can see all the events list and he/she also can remove events.
+* Admin can include new event, which is stored in database and showed in homepage.
 
 
 ## Framework library and packages
@@ -34,3 +34,5 @@ This website is for an organization which organizes varoius charity events and o
 * Material-UI
 * Node Js
 * Firebase
+* MongoDB Atlas
+* Heroku
